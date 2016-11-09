@@ -78,7 +78,7 @@
             // 
             // categoryBindingSource
             // 
-            this.categoryBindingSource.DataSource = typeof(Model.Category);
+            //this.categoryBindingSource.DataSource = typeof(Model.Category);
             // 
             // price
             // 
@@ -185,7 +185,7 @@
             // 
             // productBindingSource
             // 
-            this.productBindingSource.DataSource = typeof(Model.Product);
+//            this.productBindingSource.DataSource = typeof(Model.Product);
             // 
             // ProductsForm
             // 

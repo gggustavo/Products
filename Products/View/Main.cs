@@ -22,5 +22,16 @@ namespace View
             var frm = new ProductsForm();
             frm.ShowDialog(this);
         }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new SaleForm();
+            frm.ShowDialog(this);
+        }
     }
 }

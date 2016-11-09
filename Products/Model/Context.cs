@@ -22,10 +22,17 @@ namespace Model
                 .HasRequired(_ => _.Category);
 
             modelBuilder.Entity<Category>().HasKey(_ => _.IdCategory);
+
+            modelBuilder.Entity<Sale>()
+                .HasKey(_ => _.IdSale)
+                .HasMany(_ => _.Products)
+                .WithMany(_ => _.Sale);
+            
         }
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Sale> Sales { get; set; }
 
  
     }

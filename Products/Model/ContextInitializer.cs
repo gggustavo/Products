@@ -1,4 +1,7 @@
 ﻿using System.Data.Entity;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Model
 {
@@ -8,6 +11,7 @@ namespace Model
         {
             AddCategories(context);
             AddProduts(context);
+            AddSale(context);
 
             base.Seed(context);
         }
@@ -55,5 +59,20 @@ namespace Model
 
             context.SaveChanges();
         }
+
+        private static void AddSale(Context context) {
+
+            var products = context.Products.Where(_ => _.IdProduct <= 4).ToList();
+
+            var sale = new Sale
+            {
+                DateSale = DateTime.Now,
+                Products = products
+            };
+
+            context.Sales.Add(sale);
+            context.SaveChanges();
+            
+        }        
     }
 }

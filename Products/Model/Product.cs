@@ -10,5 +10,7 @@ namespace Model
 
         public int IdCategory { get; set; }
         public Category Category { get; set; }
+
+        public ICollection<Sale> Sale { get; set; }
     }
 }
